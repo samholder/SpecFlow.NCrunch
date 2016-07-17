@@ -1,8 +1,0 @@
-﻿<?xml version="1.0"?>
-<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-  <specFlow>
-    <plugins xdt:Transform="InsertIfMissing">
-      <add name="NCrunch.Generator" path=".\SpecflowPlugins\" type="Generator" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
-    </plugins>
-  </specFlow>
-</configuration>

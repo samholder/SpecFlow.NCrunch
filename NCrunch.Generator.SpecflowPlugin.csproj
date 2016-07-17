@@ -44,6 +44,10 @@
     <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NCrunch.Framework, Version=2.23.0.2, Culture=neutral, PublicKeyToken=01d101bf6f3e0aea, processorArchitecture=MSIL">
+      <HintPath>packages\NCrunch.Framework.2.23.0.2\lib\portable-windows8+net45\NCrunch.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -87,10 +91,6 @@
     <Content Include="Install.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="app.config.install.xdt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="app.config.uninstall.xdt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -105,16 +105,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <CodeAnalysisDictionary Condition="Exists('$(BuildSharedDirectory)SolutionCommonFiles\FXCop\CustomDictionary.xml')" Include="$(BuildSharedDirectory)SolutionCommonFiles\FXCop\CustomDictionary.xml">
-      <Link>CustomDictionary.xml</Link>
-    </CodeAnalysisDictionary>
-  </ItemGroup>
   <Target Name="AfterBuild">
     <ItemGroup>
       <_CopyItems Include="$(TargetDir)\*.*" />
     </ItemGroup>
     <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(SolutionDir)Build" />
+    <Exec Condition="'$(NuGetExePath)' != '' AND '$(NCrunch)'=='' AND '$(LocalNuGetFolder)'!=''" WorkingDirectory="$(BaseDir)" Command="$(NuGetExePath) pack $(SolutionDir)$(SolutionName).nuspec -OutputDirectory $(LocalNuGetFolder)" />
   </Target>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

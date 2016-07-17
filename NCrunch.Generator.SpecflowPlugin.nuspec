@@ -12,11 +12,10 @@
     <copyright>Applied Systems 2014</copyright>
     <language>en-GB</language>
   </metadata>
+  
   <files>
-    <file src="Build\NCrunch.Generator.SpecflowPlugin.dll" target="Content\SpecflowPlugins\NCrunch.Generator.SpecflowPlugin.dll" />
-    <file src="Build\NCrunch.Generator.NCrunchAttributes.dll" target="lib\net\NCrunch.Generator.NCrunchAttributes.dll" />
-    <!--<file src="Build\install.ps1" target="Tools\install.ps1" />    -->
-    <file src="Build\app.config.install.xdt" target="Content\app.config.install.xdt" />
+    <file src="Build\NCrunch.Generator.SpecflowPlugin.dll" target="tools\NCrunch.Generator.SpecflowPlugin.dll" />    
+    <file src="Build\install.ps1" target="Tools\install.ps1" />  
     <file src="Build\app.config.uninstall.xdt" target="Content\app.config.uninstall.xdt" />
   </files>
 </package>
