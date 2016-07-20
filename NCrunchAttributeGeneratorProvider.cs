@@ -49,20 +49,11 @@ namespace NCrunch.Generator.SpecflowPlugin
             this.codeDomHelper = codeDomHelper;
         }
 
-        public bool SupportsRowTests
-        {
-            get
-            {
-                return baseGeneratorProvider.SupportsRowTests;
-            }
-        }
+       
 
-        public bool SupportsAsyncTests
+        public UnitTestGeneratorTraits GetTraits()
         {
-            get
-            {
-                return baseGeneratorProvider.SupportsAsyncTests;
-            }
+            return baseGeneratorProvider.GetTraits();
         }
 
         public void SetTestClass(TestClassGenerationContext generationContext, string featureTitle,

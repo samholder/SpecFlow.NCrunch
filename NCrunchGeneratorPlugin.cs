@@ -10,43 +10,16 @@ using TechTalk.SpecFlow.Infrastructure;
 namespace NCrunch.Generator.SpecflowPlugin
 {
     /// <summary>
-    ///     The CodedUI generator plugin.
+    ///     The NCrunch attributes generator plugin.
     /// </summary>
     public class NCrunchGeneratorPlugin : IGeneratorPlugin
     {
-        /// <summary>
-        ///     The register dependencies.
-        /// </summary>
-        /// <param name="container">
-        ///     The container.
-        /// </param>
-        public void RegisterDependencies(ObjectContainer container)
+        public void Initialize(GeneratorPluginEvents generatorPluginEvents, GeneratorPluginParameters generatorPluginParameters)
         {
-        }
-
-        /// <summary>
-        ///     The register customizations.
-        /// </summary>
-        /// <param name="container">
-        ///     The container.
-        /// </param>
-        /// <param name="generatorConfiguration">
-        ///     The generator configuration.
-        /// </param>
-        public void RegisterCustomizations(ObjectContainer container,
-            SpecFlowProjectConfiguration generatorConfiguration)
-        {
-            container.RegisterTypeAs<NCrunchAttributeGeneratorProvider, IUnitTestGeneratorProvider>();
-        }
-
-        /// <summary>
-        ///     The register configuration defaults.
-        /// </summary>
-        /// <param name="specFlowConfiguration">
-        ///     The spec flow configuration.
-        /// </param>
-        public void RegisterConfigurationDefaults(SpecFlowProjectConfiguration specFlowConfiguration)
-        {
+            generatorPluginEvents.CustomizeDependencies+= (sender, args) =>
+            {
+                args.ObjectContainer.RegisterTypeAs<NCrunchAttributeGeneratorProvider, IUnitTestGeneratorProvider>();
+            };
         }
     }
 }

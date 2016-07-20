@@ -21,7 +21,7 @@ if(!(Test-Path $projFile)){
 
 $projectDirectory = [System.IO.Path]::GetDirectoryName($project.FullName)
 Push-Location $projectDirectory
-$packageDllPath = "$rootPath\tools\NCrunch.Generator.SpecflowPlugin.dll"
+$packageDllPath = "$rootPath\tools\"
 $pluginPath = Resolve-Path -Relative $packageDllPath
 Pop-Location
 
