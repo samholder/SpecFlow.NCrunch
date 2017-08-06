@@ -21,6 +21,9 @@ namespace NCrunch.Generator.SpecflowPlugin
             switch (runtimeUnitTestProvider.ToUpper(CultureInfo.InvariantCulture))
             {
                 case "NUNIT":
+                    baseGeneratorProvider = new NUnit3TestGeneratorProvider(codeDomHelper);
+                    break;
+                case "NUNIT.2":
                     baseGeneratorProvider = new NUnitTestGeneratorProvider(codeDomHelper);
                     break;
                 case "MSTEST":
