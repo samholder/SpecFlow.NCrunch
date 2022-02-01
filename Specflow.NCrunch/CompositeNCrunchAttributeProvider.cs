@@ -1,9 +1,9 @@
-using System.CodeDom;
-using System.Collections.Generic;
-using TechTalk.SpecFlow.Utils;
-
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
+    using System.CodeDom;
+    using System.Collections.Generic;
+    using TechTalk.SpecFlow.Generator.CodeDom;
+
     /// <summary>
     ///     Attribute provider that just delegates to the list of all known providers
     /// </summary>

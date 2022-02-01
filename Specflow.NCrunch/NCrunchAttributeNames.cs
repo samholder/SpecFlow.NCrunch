@@ -1,4 +1,4 @@
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
     using System.Collections.Generic;
 

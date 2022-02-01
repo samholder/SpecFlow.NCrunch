@@ -1,4 +1,4 @@
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
     /// <summary>
     ///     Implementation class which is responsible for generating the NCrunch attributes

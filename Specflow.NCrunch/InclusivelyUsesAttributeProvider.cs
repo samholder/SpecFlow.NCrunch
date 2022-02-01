@@ -1,4 +1,4 @@
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
     /// <summary>
     /// Class which generates the ncrunch ExclusivelyUses attribute 

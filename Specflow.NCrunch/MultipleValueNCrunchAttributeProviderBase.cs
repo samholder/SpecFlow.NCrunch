@@ -1,9 +1,9 @@
-using System.CodeDom;
-using System.Linq;
-using TechTalk.SpecFlow.Utils;
-
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
+    using System.CodeDom;
+    using System.Linq;
+    using TechTalk.SpecFlow.Generator.CodeDom;
+
     /// <summary>
     /// Base class for attributes which have multiple parameters passed to the attribute
     /// </summary>

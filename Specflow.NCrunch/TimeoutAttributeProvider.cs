@@ -1,15 +1,13 @@
-using System;
-using System.CodeDom;
-using TechTalk.SpecFlow.Utils;
-
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
+    using System;
+    using System.CodeDom;
     using System.Globalization;
+    using TechTalk.SpecFlow.Generator.CodeDom;
 
     /// <summary>
     /// Implementation class which is responsible for generating the NCrunch attributes NCrunch.Framework.Timeout(int milliseconds)
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses")]
     internal class TimeoutAttributeProvider : NCrunchAttributeProviderBase
     {
         protected override CodeAttributeDeclaration InternalProvideAttribute(CodeDomHelper codeDomHelper,

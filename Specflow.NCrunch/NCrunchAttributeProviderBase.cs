@@ -1,8 +1,8 @@
-using System.CodeDom;
-using TechTalk.SpecFlow.Utils;
-
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
+    using System.CodeDom;
+    using TechTalk.SpecFlow.Generator.CodeDom;
+
     /// <summary>
     ///     Base class for all attribute providers that will be used to provide the NCrunch attributes to decorate the specflow
     ///     generated tests

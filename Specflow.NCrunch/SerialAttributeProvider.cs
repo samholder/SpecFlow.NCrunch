@@ -1,8 +1,8 @@
-using System.CodeDom;
-using TechTalk.SpecFlow.Utils;
-
-namespace NCrunch.Generator.SpecflowPlugin
+namespace Specflow.NCrunch
 {
+    using System.CodeDom;
+    using TechTalk.SpecFlow.Generator.CodeDom;
+
     /// <summary>
     /// Implementation class which is responsible for generating the NCrunch attributes NCrunch.Framework.Serial()
     /// </summary>
