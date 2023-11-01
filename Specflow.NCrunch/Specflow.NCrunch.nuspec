@@ -1,23 +1,26 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>SpecFlow.NCrunch</id>
-    <version>3.9.22</version>
+    <version>3.9.74</version>
     <title>SpecFlow.NCrunch</title>
     <authors>Sam Holder</authors>
+	  <projectUrl>https://github.com/samholder/SpecFlow.NCrunch</projectUrl>
+	  <repository type="git" url="https://github.com/samholder/SpecFlow.NCrunch.git" branch="master" />
+	  <license type="expression">MIT</license>
     <description>This is a Plugin for SpecFlow that generates NCrunch attributes</description>
     <summary></summary>
     <language>en-UK</language>
 	  <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>specflow ncrunch</tags>
     <dependencies>
-      <dependency id="SpecFlow" version="3.9.22"/>
-      <dependency id="NCrunch.Framework" version="*"/>
+      <dependency id="SpecFlow" version="3.9.74"/>
+      <dependency id="NCrunch.Framework" version="4.17.0.5"/>
     </dependencies>
   </metadata>
   <files>
     <file src="build\**\*" target="build"/>
     <file src="bin\$config$\net471\Specflow.NCrunch.SpecFlowPlugin.*" target="build\net471"/>
-    <file src="bin\$config$\netcoreapp2.1\Specflow.NCrunch.SpecFlowPlugin.dll" target="build\netcoreapp2.1"/>
-    <file src="bin\$config$\netcoreapp2.1\Specflow.NCrunch.SpecFlowPlugin.pdb" target="build\netcoreapp2.1"/>
+    <file src="bin\$config$\netcoreapp3.1\Specflow.NCrunch.SpecFlowPlugin.dll" target="build\netcoreapp3.1"/>
+    <file src="bin\$config$\netcoreapp3.1\Specflow.NCrunch.SpecFlowPlugin.pdb" target="build\netcoreapp3.1"/>
   </files>
 </package>

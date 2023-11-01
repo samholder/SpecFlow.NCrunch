@@ -36,20 +36,34 @@
             {
                 return false;
             }
-
-            var stringList = new List<string>();
-            if (featureTags.ContainsKey(generationContext.Feature))
+            if (!NCrunchAttributeNames.RemovePrefixAndSuffix(tagName).Equals(NCrunchAttributeNames.RemovePrefixAndSuffix(NCrunchAttributeNames.NCrunchAtomic),StringComparison.OrdinalIgnoreCase))
             {
-                stringList = featureTags[generationContext.Feature];
-            }
+                // keep a list of features that need the attributes applying to every member
+                // This excludes the atomic attribute, which need to go on the class
+                var stringList = new List<string>();
+                if (featureTags.ContainsKey(generationContext.Feature))
+                {
+                    stringList = featureTags[generationContext.Feature];
+                }
 
-            stringList.Add(tagName);
-            featureTags[generationContext.Feature] = stringList;
+                stringList.Add(tagName);
+                featureTags[generationContext.Feature] = stringList;                
+            }
             return true;
+        }
+
+        private void AddNCrunchAtomicAttributeToFeature(TestClassGenerationContext generationContext, string tagName)
+        {
+            generationContext.TestClass.CustomAttributes.Add(new CodeAttributeDeclaration(NCrunchAttributeNames.NCrunchAtomic));
         }
 
         public void DecorateFrom(string tagName, TestClassGenerationContext generationContext)
         {
+            //we only want to add the Atomic attribute to the class
+            if(NCrunchAttributeNames.RemovePrefixAndSuffix(tagName).Equals(NCrunchAttributeNames.RemovePrefixAndSuffix(NCrunchAttributeNames.NCrunchAtomic), StringComparison.OrdinalIgnoreCase)){
+                AddNCrunchAtomicAttributeToFeature(generationContext, tagName);
+            }
+            
         }
 
         public bool CanDecorateFrom(

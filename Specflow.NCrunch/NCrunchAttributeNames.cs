@@ -44,6 +44,11 @@ namespace Specflow.NCrunch
         /// Identifier for the NCrunch Timeout attribute
         /// </summary>
         public static readonly string NCrunchTimeout = NCrunchAttributePrefix + "Timeout" + AttributeSuffix;
+        /// <summary>
+        /// Identifier for the NCrunch Atomic attribute
+        /// </summary>
+        public static readonly string NCrunchAtomic = NCrunchAttributePrefix + "Atomic" + AttributeSuffix;
+
 
         public static IEnumerable<string> All()
         {
@@ -54,6 +59,7 @@ namespace Specflow.NCrunch
             yield return NCrunchRequiresCapability;
             yield return NCrunchCategory;
             yield return NCrunchTimeout;
+            yield return NCrunchAtomic;
         }
 
         public static string RemovePrefixAndSuffix(string attributeName)
